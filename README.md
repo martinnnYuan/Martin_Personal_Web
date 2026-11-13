@@ -19,19 +19,20 @@ python3 -m http.server 8000
 3. 在 **Actions** 中运行 **Deploy portfolio to GitHub Pages**（或再次推送 main）。
 4. 工作流成功后，网站地址为：`https://martinnnyuan.github.io/Martin_Personal_Web/`。
 
-所有本地资源使用相对路径，同时适用于项目子路径和用户主页根目录。无需修改现有的 `martinnnYuan.github.io` 仓库。工作流仅发布页面和 assets，不会发布 README、编辑器设置或原始研究材料。
+所有本地资源使用相对路径，同时适用于项目子路径和用户主页根目录。无需修改现有的 `martinnnYuan.github.io` 仓库。工作流仅发布首页、项目详情页、样式、脚本和 assets，不会发布 README、编辑器设置或原始研究材料。
 
 也可使用无工作流部署：Settings → Pages → Deploy from a branch → main / (root)。两种方式任选一种。
 
 ## 内容维护
 
-- `index.html`：英文简介、研究兴趣、Alynna、项目、经历和联系信息。
-- `styles.css`：奶油色、植物绿和陶土色视觉；桌面、平板和手机布局；减少动态效果与打印适配。
-- `script.js`：移动菜单、项目筛选、当前章节提示与页脚年份。
+- `index.html`：英文简介与教育背景、研究兴趣、Alynna、项目和联系信息。
+- `projects/`：五个简历项目的独立详情页，供尚无已确认公开仓库的项目使用。
+- `styles.css`：奶油色、植物绿和陶土色视觉；简洁布局；桌面、平板、手机和打印适配。
+- `script.js`：自动更新页脚年份；导航和项目链接无需 JavaScript。
 - `assets/`：Alynna 官方图片、Seattle 项目截图和 SVG favicon。
 - `.github/workflows/pages.yml`：GitHub Pages 自动部署。
 
-添加项目时，在 `.projects` 中添加一个 `.project`，设置 `data-category="mobility"`、`environment` 或 `data`（可使用空格组合）。项目筛选仅影响 Further Explorations；Alynna 始终显示。
+添加项目时，在 `.project-list` 中添加一个 `.project`，使用项目名称和一句简介；有公开页面的项目可添加链接。Alynna 使用独立的重点展示区域。
 
 ## 内容依据与编辑边界
 
@@ -45,7 +46,7 @@ GitHub 仓库核查（2026-11-13）：
 - `martinnnYuan.github.io`：列为早期个人网站。
 - `Martin_Personal_Web`：本站，无需重复列为另一个项目。
 - 名称含 lab 的仓库已排除；`geog458_us_covid_map` 的 README 明确标注 **GEOG 458 Lab 03**，因此也排除。
-- 其他简历项目可以阅读站内说明；没有验证的公开链接不添加假链接。
+- 其他五个简历项目链接到 `projects/` 中各自的详情页；没有验证的公开仓库不添加假链接。
 
 学术措辞保留方法边界：公交站点密度是可达性代理指标，Mindful Mobility 是研究方向，Alynna 不主张已验证的治疗效果。
 
